@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:wpf_3_task"
         mc:Ignorable="d"
+        Background="LightGreen"  
         ResizeMode="NoResize" WindowStyle="SingleBorderWindow" 
         Title="MainWindow" Height="296.291" Width="673.496">
     <Grid>

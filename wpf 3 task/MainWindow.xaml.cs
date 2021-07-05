@@ -28,16 +28,7 @@ namespace wpf_3_task
          
         }
 
-        public string Name { get; set; }
-        private void Savebtn_Click(object sender, RoutedEventArgs e)
-        {
-            SaveFileDialog save = new SaveFileDialog();
-
-            using (StreamWriter streamWriter = new StreamWriter(Name))
-            {
-                streamWriter.Write(all.Text);
-            }
-        }
+      
 
         private void Cutbtn_Click(object sender, RoutedEventArgs e)
         {
@@ -54,7 +45,14 @@ namespace wpf_3_task
                 all.Paste();
             }
         }
+ private void SelectAllbtn_Click(object sender, RoutedEventArgs e)
+        {
 
+            
+                all.SelectAll();
+                
+            
+        }
         private void Copybtn_Click(object sender, RoutedEventArgs e)
         {
             if (all.Text != null)
@@ -63,14 +61,27 @@ namespace wpf_3_task
             }
         }
 
-        private void SelectAllbtn_Click(object sender, RoutedEventArgs e)
-        {
 
-            
-                all.SelectAll();
-                
-            
+
+
+
+
+
+
+
+
+
+
+         private void Savebtn_Click(object sender, RoutedEventArgs e)
+        {
+            SaveFileDialog save = new SaveFileDialog();
+
+            using (StreamWriter streamWriter = new StreamWriter(Name))
+            {
+                streamWriter.Write(all.Text);
+            }
         }
+        public string Name { get; set; }
 
         private void Openbtn_Click(object sender, RoutedEventArgs e)
         {
