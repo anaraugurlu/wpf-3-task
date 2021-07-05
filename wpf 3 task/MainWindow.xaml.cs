@@ -50,6 +50,7 @@ namespace wpf_3_task
 
             
                 all.SelectAll();
+            all.Focus();
                 
             
         }
@@ -101,32 +102,7 @@ namespace wpf_3_task
         }
         public string Name { get; set; }
 
-        private void Openbtn_Click(object sender, RoutedEventArgs e)
-        {
-            Microsoft.Win32.OpenFileDialog open = new Microsoft.Win32.OpenFileDialog();
-            Nullable<bool> isTrue = open.ShowDialog();
-
-
-
-            if (isTrue == true)
-            {
-                using (StringReader reader = new StringReader(open.FileName))
-                {
-                   Name = open.FileName;
-                    text.Text = reader.ReadToEnd();
-                    all.Text = File.ReadAllText(text.Text );
-
-
-                }
-            }
-            foreach (var item in mystack .Children )
-            {
-                if(item is Button bt)
-                {
-                    bt.IsEnabled = true;
-                }
-            }
-        }
+        
 
         private void all_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -139,6 +115,31 @@ namespace wpf_3_task
                     streamWriter.Write(all.Text);
                 }
             }
+        }private void Openbtn_Click(object sender, RoutedEventArgs e)
+        {
+
+  foreach (var item in mystack .Children )
+            {
+                if(item is Button bt)
+                {
+                    bt.IsEnabled = true;
+                }
+            }
+
+            Microsoft.Win32.OpenFileDialog open = new Microsoft.Win32.OpenFileDialog();
+            Nullable<bool> isTrue = open.ShowDialog();
+            if (isTrue == true)
+            {
+                using (StringReader reader = new StringReader(open.FileName))
+                {
+                   Name = open.FileName;
+                    text.Text = reader.ReadToEnd();
+                    all.Text = File.ReadAllText(text.Text );
+
+
+                }
+            }
+          
         }
     }
 }
