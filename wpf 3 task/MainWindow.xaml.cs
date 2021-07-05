@@ -72,6 +72,24 @@ namespace wpf_3_task
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
          private void Savebtn_Click(object sender, RoutedEventArgs e)
         {
             SaveFileDialog save = new SaveFileDialog();
