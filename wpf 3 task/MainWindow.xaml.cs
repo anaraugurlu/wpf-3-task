@@ -127,8 +127,7 @@ namespace wpf_3_task
             }
 
             Microsoft.Win32.OpenFileDialog open = new Microsoft.Win32.OpenFileDialog();
-            Nullable<bool> isTrue = open.ShowDialog();
-            if (isTrue == true)
+            if (open.ShowDialog () == true)
             {
                 using (StringReader reader = new StringReader(open.FileName))
                 {
